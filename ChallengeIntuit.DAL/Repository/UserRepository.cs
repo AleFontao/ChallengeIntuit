@@ -19,7 +19,7 @@ namespace ChallengeIntuit.DAL.Repository
 
         public async Task<PaginationDTO<User>> GetAllUsers(FilterDTO filterDTO)
         {
-            var query = _context.Users.AsQueryable();
+            var query = _context.Users.AsNoTracking().AsQueryable();
             if (!filterDTO.IncludeInactive)
             {
                 query = query.Where(x => !x.IsDeleted);
@@ -66,7 +66,7 @@ namespace ChallengeIntuit.DAL.Repository
 
         public async Task<List<User>> SearchUsers(string name)
         {
-            return await _context.Users.Where(x => EF.Functions.Collate((x.FirstName + " " + x.LastName).ToLower(), Collation)
+            return await _context.Users.AsNoTracking().Where(x => EF.Functions.Collate((x.FirstName + " " + x.LastName).ToLower(), Collation)
                   .Contains(name.ToLower())).ToListAsync();
         }
 
