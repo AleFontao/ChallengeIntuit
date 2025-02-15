@@ -482,3 +482,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+ChallengeIntuit/appsettings.Development.json
+ChallengeIntuit/appsettings.json
+ChallengeIntuit.sln
