@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "c5ef9ec7-c112-49a2-a4ff-2c836d05f326",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17027082"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}/api/user?Limit=5&Skip=0&SortBy=ASC&ColumnFilter=FirstName&IncludeInactive=true\n&SearchValue=Fer",
+					"host": [
+						"{{LOCAL}}"
+					],
+					"path": [
+						"api",
+						"user"
+					],
+					"query": [
+						{
+							"key": "Limit",
+							"value": "5"
+						},
+						{
+							"key": "Skip",
+							"value": "0"
+						},
+						{
+							"key": "SortBy",
+							"value": "ASC"
+						},
+						{
+							"key": "ColumnFilter",
+							"value": "FirstName"
+						},
+						{
+							"key": "IncludeInactive",
+							"value": "true\n"
+						},
+						{
+							"key": "SearchValue",
+							"value": "Fer"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Alejo\",\r\n  \"lastName\": \"Fontao\",\r\n  \"birthDate\": \"2020-08-25T13:02:42.469Z\",\r\n  \"cuit\": \"20427845452\",\r\n  \"address\": \"Av. valparaiso 4251\",\r\n  \"phoneNumber\": \"+3517344679\",\r\n  \"email\": \"alefonta4@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7077/api/User",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7077",
+					"path": [
+						"api",
+						"User"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://localhost:7077/api/User' \\\r\n  -H 'accept: text/plain' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"firstName\": \"Alejo\",\r\n  \"lastName\": \"Fontao\",\r\n  \"birthDate\": \"2020-08-25T13:02:42.469Z\",\r\n  \"cuit\": \"20427845452\",\r\n  \"address\": \"Av. valparaiso 4251\",\r\n  \"phoneNumber\": \"+3517344679\",\r\n  \"email\": \"alefonta4@gmail.com\"\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 11,\r\n  \"firstName\": \"Alejo\",\r\n  \"lastName\": \"Fontao\",\r\n  \"birthDate\": \"2020-08-25T13:02:42.469Z\",\r\n  \"cuit\": \"20427845452\",\r\n  \"address\": \"Av. valparaiso 4251\",\r\n  \"phoneNumber\": \"+3517344678\",\r\n  \"email\": \"alefonta4@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7077/api/User",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7077",
+					"path": [
+						"api",
+						"User"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'PUT' \\\r\n  'https://localhost:7077/api/User' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n\"id\": 11,\r\n  \"firstName\": \"Alejo\",\r\n  \"lastName\": \"Fontao\",\r\n  \"birthDate\": \"2020-08-25T13:02:42.469Z\",\r\n  \"cuit\": \"20427845452\",\r\n  \"address\": \"Av. valparaiso 4251\",\r\n  \"phoneNumber\": \"+3517344678\",\r\n  \"email\": \"alefonta4@gmail.com\"\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "FinUserById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7077/api/User/11",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7077",
+					"path": [
+						"api",
+						"User",
+						"11"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7077/api/User/11' \\\r\n  -H 'accept: text/plain'"
+			},
+			"response": []
+		},
+		{
+			"name": "SearchByName",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7077/api/User/searchByName/Alejo%20Fontao",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7077",
+					"path": [
+						"api",
+						"User",
+						"searchByName",
+						"Alejo%20Fontao"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
